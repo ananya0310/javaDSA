@@ -1,0 +1,21 @@
+import java.util.*;
+public class starTriangleInverted {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter no. of lines: ");
+        int n = sc.nextInt();
+        for(int lines=1;lines<=n;lines++){//line =1
+            for(int star=1;star<=(n-lines+1);star++){//star=1
+                System.out.print("& ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+/*PATTERN TO PRINT 
+& & & &
+& & & 
+& &
+&
+*/

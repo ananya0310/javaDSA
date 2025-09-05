@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class CharacterPattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.err.println("Enter a number N: ");
+        int n = sc.nextInt();
+        char ch = 'A';
+        sc.close();
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.err.print(ch + " ");
+                ch++;
+            }
+            System.out.println();
+        } 
+    }
+}
+/*The Pattern to be printed is 
+    A 
+    B C
+    D E F
+    G H I J
+ */

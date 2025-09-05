@@ -1,0 +1,91 @@
+
+import java.util.Scanner;
+
+public class Methods {
+
+    public static int sum(int a,int b){ // sum of two numbers
+        int sum = a + b;
+        return sum;
+    }
+
+    public static int[] swap(int a,int b){ // Swapping of two numbers
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        return new int[] {a,b};
+    }
+
+    public static int multiply(int a,int b){ // Product of two numbers
+        int product = a * b;
+        return product;
+    }
+
+    public static int Factorial(int a) { // Factorial of a number
+        int factorial = 1;
+        for(int i=1;i<=a;i++){
+            factorial = factorial * i;
+        }
+        return factorial;
+    }
+
+    public static int binomialCoefficient(int a,int b){ // binomial Coefficient
+        int aFact = Factorial(a);
+        int bFact = Factorial(b);
+        int c = a - b;
+        int a_bFact = Factorial(c);
+        int bino = aFact/(bFact * a_bFact);
+        return bino;
+    }
+
+    public static float Average(int a,int b,int c){ // Average of three numbers
+        float average = (a+b+c)/3;
+        return average;
+
+    }
+
+    public static boolean isEven(int c){ //to check if a number is even or not
+        if(c%2==0){
+            return true;
+        }
+        else return false;
+    }
+
+    public static boolean isPrime(int n){ // prime number or not
+        for(int i=2;i<=n-1;i++){
+            if(n % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void primeInRange(int n){
+        for(int i=2;i<=n;i++){
+            if(isPrime(i)){
+                System.err.print(i+" ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.err.println("Enter three numbers : "); 
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        sc.close();
+        System.err.println("The sum of a and b is : "+ sum(a, b));
+        System.err.println("The after swap of a and b is " + Arrays.toString(swap(a,b)));
+        System.err.println("The product of two numbers is: " + multiply(a, b));
+        System.err.println("The factorial of a  is: "+ Factorial(a));
+        System.err.println("The binomial Coefficient of a and b is : "+ binomialCoefficient(a, b));
+        System.err.println("The average of three numbers is : "+ Average(a,b,c));
+        System.err.println("To check if the number is even or not : "+ isEven(c));
+        System.err.println("Enter a number : ");
+        int n = sc.nextInt();
+        System.err.println("The given number is a prime: "+ isPrime(n));
+        System.err.print("The prime numbers in the given range is : ");
+        primeInRange(n);
+    }
+
+}

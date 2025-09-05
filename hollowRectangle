@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class hollowRectangle {
+    public static void hollowRectangle(int rows,int cols){
+        for(int i=1;i<=rows;i++){ // outer loop for rows
+            for(int j=1;j<=cols;j++){//inner loops for columns
+                if(i==1||i==rows||j==1||j==cols){
+                    System.err.print("*");
+                }
+                else System.err.print(" ");
+            }
+            System.err.println();
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.err.println("Enter the number of rows : ");
+        int rows = sc.nextInt();
+        System.err.println("Enter the number of columns : ");
+        int columns = sc.nextInt();
+        sc.close();
+        hollowRectangle(rows, columns);
+    }
+}
+
+
+ /*
+Enter the number of rows : 
+4
+Enter the number of columns : 
+6
+
+******
+*    *
+*    *
+******
+
+
+*/
